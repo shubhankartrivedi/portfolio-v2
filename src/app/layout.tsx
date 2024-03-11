@@ -1,11 +1,7 @@
 import type { Metadata } from "next";
-import { Fjalla_One } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from '@vercel/analytics/react';
 import "./globals.css";
-
-const fjalla = Fjalla_One({
-  weight: "400",
-  subsets: ["latin"],
-})
 
 export const metadata: Metadata = {
   title: "Be Right Back",
@@ -19,7 +15,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body >{children}</body>
+     
+      <body>
+        {children}
+        <SpeedInsights />
+        <Analytics />
+      </body>
     </html>
   );
 }
